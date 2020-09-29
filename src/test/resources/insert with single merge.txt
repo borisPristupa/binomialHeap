@@ -1,0 +1,17 @@
+[
+  1 -> []
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  2 -> []
+]
+[
+  2 -> []
+  1 -> []
+]
+Merge step 2: merging the trees of same degree
+[
+  1 -> [
+    2 -> []
+  ]
+]
