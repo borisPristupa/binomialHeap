@@ -50,8 +50,8 @@ public class TestBinomialHeapInsert {
         heap.insert(2);
         heap.insert(-4);
         heap.insert(0);
-//        heap.insert(20);
-//        heap.insert(1);
+        heap.insert(20);
+        heap.insert(1);
         suit.assertOutputMatches(MANY);
     }
 
@@ -61,13 +61,13 @@ public class TestBinomialHeapInsert {
         heap.insert(1);
         heap.insert(1);
         heap.insert(1);
-        heap.insert(1);
+//        heap.insert(1);
         suit.assertOutputMatches(DUPLICATES);
     }
 
-    private static final String SINGLE = "insert single.txt";
-    private static final String WITH_SINGLE_MERGE = "insert with single merge.txt";
-    private static final String WITH_SINGLE_MERGE_INVERSE_ORDER = "insert with single merge inverse order.txt";
-    private static final String MANY = "insert many.txt";
-    private static final String DUPLICATES = "insert duplicates.txt";
+    private static final String SINGLE = "insert/single.txt";
+    private static final String WITH_SINGLE_MERGE = "insert/with single merge.txt";
+    private static final String WITH_SINGLE_MERGE_INVERSE_ORDER = "insert/with single merge inverse order.txt";
+    private static final String MANY = "insert/many.txt";
+    private static final String DUPLICATES = "insert/duplicates.txt";
 }
