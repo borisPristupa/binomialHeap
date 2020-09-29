@@ -67,26 +67,28 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
         log("Smallest value removed from the heap");
         logHeap();
 
-        // merge the heap with the children of the removed
-        log("Creating a new heap from the children of the removed node");
+        if (min.child != null) {
+            // merge the heap with the children of the removed
+            log("Creating a new heap from the children of the removed node");
 
-        Node childHeap = min.child;
-        curr = childHeap;
-        logHeap(curr);
-
-        while (curr.sibling != null) {
-            Node oldChildHeap = childHeap;
-            childHeap = curr.sibling;
-            Node next = curr.sibling.sibling;
-
-            childHeap.sibling = oldChildHeap;
-            curr.sibling = next;
-
+            Node childHeap = min.child;
+            curr = childHeap;
             logHeap(curr);
-        }
 
-        log("Merging the heap with the children of the removed node");
-        mergeWith(childHeap);
+            while (curr.sibling != null) {
+                Node oldChildHeap = childHeap;
+                childHeap = curr.sibling;
+                Node next = curr.sibling.sibling;
+
+                childHeap.sibling = oldChildHeap;
+                curr.sibling = next;
+
+                logHeap(curr);
+            }
+
+            log("Merging the heap with the children of the removed node");
+            mergeWith(childHeap);
+        }
         return min.value;
     }
 

@@ -1,0 +1,82 @@
+[
+  3 -> []
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  2 -> []
+]
+[
+  2 -> []
+  3 -> []
+]
+Merge step 2: merging the trees of same degree
+[
+  2 -> [
+    3 -> []
+  ]
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  1 -> []
+]
+[
+  1 -> []
+  2 -> [
+    3 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
+Merge step 1: adding all binomial trees to a single heap
+[
+  5 -> []
+]
+[
+  5 -> []
+  1 -> []
+]
+[
+  5 -> []
+  1 -> []
+  2 -> [
+    3 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
+[
+  1 -> [
+    5 -> []
+  ]
+  2 -> [
+    3 -> []
+  ]
+]
+[
+  1 -> [
+    2 -> [
+      3 -> []
+    ]
+    5 -> []
+  ]
+]
+Minimum initialized with 1
+Smallest value removed from the heap
+[]
+Creating a new heap from the children of the removed node
+[
+  2 -> [
+    3 -> []
+  ]
+  5 -> []
+]
+[
+  2 -> [
+    3 -> []
+  ]
+]
+Merging the heap with the children of the removed node
+[
+  5 -> []
+  2 -> [
+    3 -> []
+  ]
+]

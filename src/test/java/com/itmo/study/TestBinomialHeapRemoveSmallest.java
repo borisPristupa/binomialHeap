@@ -1,11 +1,100 @@
 package com.itmo.study;
 
-/*
-1) empty - throws
-2) single - becomes empty
-3) remove tree of single element - rest of the heap doesn't change
-4) remove tree root, it's children become the new heap
-5) remove root of one of the trees, it's children merge with the rest of the heap
- */
+import com.itmo.study.verification.BinomialHeapTestingSuit;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.NoSuchElementException;
+import static org.junit.Assert.assertEquals;
+
 public class TestBinomialHeapRemoveSmallest {
+    private BinomialHeap<Integer> heap;
+    private final BinomialHeapTestingSuit suit = new BinomialHeapTestingSuit();
+
+    @Before
+    public void setUp() {
+        heap = new BinomialHeap<>();
+        heap.LOG_ENABLED = true; // FIXME
+
+        suit.init();
+    }
+
+    @After
+    public void tearDown() {
+        suit.exit();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void testRemoveFromEmptyHeap() {
+        heap.removeSmallest();
+    }
+
+    @Test
+    public void testRemoveFromSingleElementHeap() {
+        heap.insert(1);
+        long removedValue = heap.removeSmallest();
+
+        suit.assertOutputMatches(SINGLE);
+        assertEquals("The deleted item has the correct value", removedValue, 1);
+    }
+
+    @Test
+    public void testRemoveFromUsualHeap() {
+        heap.insert(1);
+        heap.insert(2);
+        heap.insert(2);
+
+        int smallest = heap.removeSmallest();
+
+        suit.assertOutputMatches(USUAL);
+        assertEquals("The deleted item has the correct value", smallest, 1);
+    }
+
+    @Test
+    public void testRemoveFromHeapWithSeparateSmallestElement() {
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+
+        int smallest = heap.removeSmallest();
+
+        suit.assertOutputMatches(WITH_SEPARATE_SMALLEST_ELEMENT);
+        assertEquals("The deleted item has the correct value", smallest, 1);
+    }
+
+    @Test
+    public void testRemoveFromHeapWithRootSmallestElement() {
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+        heap.insert(5);
+
+        int smallest = heap.removeSmallest();
+
+        suit.assertOutputMatches(WITH_ROOT_SMALLEST_ELEMENT);
+        assertEquals("The deleted item has the correct value", smallest, 1);
+    }
+
+    @Test
+    public void testRemoveRootOfOneTree() {
+        heap.insert(1);
+        heap.insert(2);
+        heap.insert(3);
+        heap.insert(4);
+        heap.insert(5);
+        heap.insert(6);
+        // TODO: add 7
+
+        int smallest = heap.removeSmallest();
+
+        suit.assertOutputMatches(ROOT_OF_ONE_TREE);
+        assertEquals("The deleted item has the correct value", smallest, 1);
+    }
+
+    private static final String USUAL = "remove/usual heap.txt";
+    private static final String SINGLE = "remove/single.txt";
+    private static final String WITH_SEPARATE_SMALLEST_ELEMENT = "remove/with separate smallest element.txt";
+    private static final String WITH_ROOT_SMALLEST_ELEMENT = "remove/with root smallest element.txt";
+    private static final String ROOT_OF_ONE_TREE = "remove/root of one tree.txt";
 }

@@ -61,7 +61,6 @@ public class TestBinomialHeapInsert {
         heap.insert(1);
         heap.insert(1);
         heap.insert(1);
-//        heap.insert(1);
         suit.assertOutputMatches(DUPLICATES);
     }
 

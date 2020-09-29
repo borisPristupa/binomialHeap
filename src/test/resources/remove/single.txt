@@ -1,0 +1,6 @@
+[
+  1 -> []
+]
+Minimum initialized with 1
+Smallest value removed from the heap
+[]
