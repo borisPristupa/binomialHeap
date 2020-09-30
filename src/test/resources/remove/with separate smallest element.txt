@@ -1,0 +1,8 @@
+Minimum initialized with 1
+Minimum compared with 2: value not changed
+Smallest value removed from the heap
+[
+  2 -> [
+    3 -> []
+  ]
+]

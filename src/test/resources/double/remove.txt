@@ -1,0 +1,71 @@
+Minimum initialized with 1.02
+Minimum compared with 1.04: value not changed
+Minimum compared with 1.01: new value set
+Smallest value removed from the heap
+[
+  1.02 -> []
+  1.04 -> [
+    1.05 -> []
+  ]
+]
+Creating a new heap from the children of the removed node
+[
+  1.03 -> [
+    1.05 -> []
+  ]
+  1.03 -> []
+]
+[
+  1.03 -> [
+    1.05 -> []
+  ]
+]
+Merging the heap with the children of the removed node
+Merge step 1: adding all binomial trees to a single heap
+[
+  1.03 -> []
+]
+[
+  1.03 -> []
+  1.02 -> []
+]
+[
+  1.03 -> []
+  1.02 -> []
+  1.03 -> [
+    1.05 -> []
+  ]
+]
+[
+  1.03 -> []
+  1.02 -> []
+  1.03 -> [
+    1.05 -> []
+  ]
+  1.04 -> [
+    1.05 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
+[
+  1.02 -> [
+    1.03 -> []
+  ]
+  1.03 -> [
+    1.05 -> []
+  ]
+  1.04 -> [
+    1.05 -> []
+  ]
+]
+[
+  1.02 -> [
+    1.03 -> [
+      1.05 -> []
+    ]
+    1.03 -> []
+  ]
+  1.04 -> [
+    1.05 -> []
+  ]
+]

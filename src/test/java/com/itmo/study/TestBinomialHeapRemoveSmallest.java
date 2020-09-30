@@ -15,7 +15,6 @@ public class TestBinomialHeapRemoveSmallest {
     @Before
     public void setUp() {
         heap = new BinomialHeap<>();
-        heap.LOG_ENABLED = true; // FIXME
 
         suit.init();
     }
@@ -33,6 +32,8 @@ public class TestBinomialHeapRemoveSmallest {
     @Test
     public void testRemoveFromSingleElementHeap() {
         heap.insert(1);
+
+        heap.LOG_ENABLED = true;
         long removedValue = heap.removeSmallest();
 
         suit.assertOutputMatches(SINGLE);
@@ -45,6 +46,7 @@ public class TestBinomialHeapRemoveSmallest {
         heap.insert(2);
         heap.insert(2);
 
+        heap.LOG_ENABLED = true;
         int smallest = heap.removeSmallest();
 
         suit.assertOutputMatches(USUAL);
@@ -57,6 +59,7 @@ public class TestBinomialHeapRemoveSmallest {
         heap.insert(2);
         heap.insert(1);
 
+        heap.LOG_ENABLED = true;
         int smallest = heap.removeSmallest();
 
         suit.assertOutputMatches(WITH_SEPARATE_SMALLEST_ELEMENT);
@@ -70,6 +73,7 @@ public class TestBinomialHeapRemoveSmallest {
         heap.insert(1);
         heap.insert(5);
 
+        heap.LOG_ENABLED = true;
         int smallest = heap.removeSmallest();
 
         suit.assertOutputMatches(WITH_ROOT_SMALLEST_ELEMENT);
@@ -84,8 +88,9 @@ public class TestBinomialHeapRemoveSmallest {
         heap.insert(4);
         heap.insert(5);
         heap.insert(6);
-        // TODO: add 7
+        heap.insert(7);
 
+        heap.LOG_ENABLED = true;
         int smallest = heap.removeSmallest();
 
         suit.assertOutputMatches(ROOT_OF_ONE_TREE);

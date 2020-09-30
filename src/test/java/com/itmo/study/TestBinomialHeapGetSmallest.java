@@ -61,6 +61,6 @@ public class TestBinomialHeapGetSmallest {
 
         long smallest = heap.getSmallest();
 
-        assertEquals(smallest, 20);
+        assertEquals(smallest, 0);
     }
 }

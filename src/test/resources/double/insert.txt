@@ -1,0 +1,74 @@
+[
+  2.0 -> []
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  1.0 -> []
+]
+[
+  1.0 -> []
+  2.0 -> []
+]
+Merge step 2: merging the trees of same degree
+[
+  1.0 -> [
+    2.0 -> []
+  ]
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  3.3 -> []
+]
+[
+  3.3 -> []
+  1.0 -> [
+    2.0 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
+Merge step 1: adding all binomial trees to a single heap
+[
+  3.5 -> []
+]
+[
+  3.5 -> []
+  3.3 -> []
+]
+[
+  3.5 -> []
+  3.3 -> []
+  1.0 -> [
+    2.0 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
+[
+  3.3 -> [
+    3.5 -> []
+  ]
+  1.0 -> [
+    2.0 -> []
+  ]
+]
+[
+  1.0 -> [
+    3.3 -> [
+      3.5 -> []
+    ]
+    2.0 -> []
+  ]
+]
+Merge step 1: adding all binomial trees to a single heap
+[
+  3.54 -> []
+]
+[
+  3.54 -> []
+  1.0 -> [
+    3.3 -> [
+      3.5 -> []
+    ]
+    2.0 -> []
+  ]
+]
+Merge step 2: merging the trees of same degree
