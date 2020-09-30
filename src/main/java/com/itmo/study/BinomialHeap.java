@@ -75,6 +75,7 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
             curr = childHeap;
             logHeap(curr);
 
+            log("Reversing the order of the trees in the children heap");
             while (curr.sibling != null) {
                 Node oldChildHeap = childHeap;
                 childHeap = curr.sibling;
@@ -83,7 +84,7 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
                 childHeap.sibling = oldChildHeap;
                 curr.sibling = next;
 
-                logHeap(curr);
+                logHeap(childHeap);
             }
 
             log("Merging the heap with the children of the removed node");
@@ -145,8 +146,13 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
         while (curr.sibling != null) {
             if (curr.sibling.degree != curr.degree) {
                 prev = curr;
-                curr = curr.sibling; // 1 2 2 4
+                curr = curr.sibling;
                 continue;
+            }
+
+            if (curr.sibling.sibling != null && curr.sibling.sibling.degree == curr.degree) {
+                prev = curr;
+                curr = curr.sibling;
             }
 
             Node smaller, greater;
@@ -209,14 +215,10 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
 
     private void buildNodesStringIndented(Node node, StringBuilder builder, String indent) {
         if (node == null) {
-//            builder.append("[]\n");
-            builder.append("[]");
-            builder.append(System.getProperty("line.separator"));
+            builder.append("[]\n");
             return;
         }
-//        builder.append("[\n");
-        builder.append("[");
-        builder.append(System.getProperty("line.separator"));
+        builder.append("[\n");
 
         while (node != null) {
             builder.append("  ").append(indent).append(node.value).append(" -> ");
@@ -224,8 +226,6 @@ public class BinomialHeap<T extends Number & Comparable<T>> {
             node = node.sibling;
         }
 
-//        builder.append(indent).append("]\n");
-        builder.append(indent).append("]");
-        builder.append(System.getProperty("line.separator"));
+        builder.append(indent).append("]\n");
     }
 }

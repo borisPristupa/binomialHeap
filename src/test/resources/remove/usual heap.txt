@@ -8,6 +8,7 @@ Creating a new heap from the children of the removed node
 [
   2 -> []
 ]
+Reversing the order of the trees in the children heap
 Merging the heap with the children of the removed node
 Merge step 1: adding all binomial trees to a single heap
 [

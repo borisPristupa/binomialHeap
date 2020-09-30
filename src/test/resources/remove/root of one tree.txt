@@ -15,7 +15,9 @@ Creating a new heap from the children of the removed node
   ]
   2 -> []
 ]
+Reversing the order of the trees in the children heap
 [
+  2 -> []
   3 -> [
     4 -> []
   ]
@@ -60,12 +62,12 @@ Merge step 2: merging the trees of same degree
 ]
 [
   2 -> [
-    3 -> [
-      4 -> []
-    ]
     7 -> []
   ]
-  5 -> [
-    6 -> []
+  3 -> [
+    5 -> [
+      6 -> []
+    ]
+    4 -> []
   ]
 ]

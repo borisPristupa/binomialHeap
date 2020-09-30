@@ -7,7 +7,7 @@ public class Resources {
     public static String load(String fileName) throws IOException {
         try (BufferedReader reader =
                      new BufferedReader(new InputStreamReader(Resources.class.getResourceAsStream("/" + fileName)))) {
-            return reader.lines().collect(Collectors.joining("\n"));
+            return reader.lines().collect(Collectors.joining(System.getProperty("line.separator")));
         }
     }
 }

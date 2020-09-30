@@ -8,7 +8,9 @@ Creating a new heap from the children of the removed node
   ]
   5 -> []
 ]
+Reversing the order of the trees in the children heap
 [
+  5 -> []
   2 -> [
     3 -> []
   ]
